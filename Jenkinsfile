@@ -3,8 +3,6 @@ pipeline {
   stages {
     stage('Build') {
       withEnv(["HOME=${env.WORKSPACE}"]) {
-        sh 'virtualenv venv --distribute'
-        sh '. venv/bin/activate'
         sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
         sh 'docker build -t jackdiamond/blackjack'
       }
