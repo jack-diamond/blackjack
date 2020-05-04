@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'python table.py'
+        sh 'python -m py_compile table.py'
       }
     }
     stage('test') {
