@@ -28,6 +28,9 @@ pipeline {
         timeout(time: 30, unit: "SECONDS"){
           input('Do you want to proceed?')
         }
+        if (user.input == false){
+          currentBuild.result == 'SUCCESS'
+        }
       }
     }
   }
