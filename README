@@ -8,7 +8,7 @@ Table, Card, Deck, Player, Dealer, BlackJackPlayer.
 To start the game run ' python3 table.py '
 
 hi
-
+hi
 Table:
 The Table class is the driver and mirrors the integration testing, so there are no actual
 feasible unit tests for this class. This classes is responsible for taking input from the player,
