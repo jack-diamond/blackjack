@@ -23,20 +23,12 @@ pipeline {
         sh 'python test_integration.py'
       }
     }
-    try {
-      stage('Proceed to Deployment') {
-        steps {
-          timeout(time: 30, unit: "SECONDS"){
-            input('Do you want to proceed?')
-          }
+    stage('Proceed to Deployment') {
+      steps {
+        timeout(time: 30, unit: "SECONDS"){
+          input('Do you want to proceed?')
         }
       }
-    } catch (err) {
-      echo err
-      currentBuild.result = "SUCCESS"
-      //do job
-    } finally {
-      currentBuild.result = "SUCCESS"
     }
   }
 }
