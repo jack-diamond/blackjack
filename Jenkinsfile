@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'pip install --upgrade pip'
           sh 'pip install coverage'
           sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
           sh 'python -m coverage xml -o reports/coverage.xml'
