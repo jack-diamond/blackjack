@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'pip install pytest'
-        sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'pip install pytest'
+          sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
+        }
       }
     }
     stage('Test') {
