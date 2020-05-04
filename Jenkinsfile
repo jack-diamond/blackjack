@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
-        sh 'pip install pyinstaller'
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('Unit Testing') {
