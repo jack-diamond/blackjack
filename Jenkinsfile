@@ -2,9 +2,11 @@ pipeline {
   agent { docker { image 'python:3.7.2' } }
   stages {
     stage('Build') {
-      withEnv(["HOME=${env.WORKSPACE}"]) {
-        sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
-        sh 'docker build -t jackdiamond/blackjack'
+      steps{
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
+          sh 'docker build -t jackdiamond/blackjack'
+        }
       }
     }
     stage('Unit Testing') {
