@@ -1,0 +1,34 @@
+CS 491 - DevOps
+Homework 2
+Jack Diamond
+
+This is my blackjack game with unit tests and integration tests. The game has 6 classes:
+Table, Card, Deck, Player, Dealer, BlackJackPlayer.
+
+To start the game run ' python3 table.py '
+
+
+Table:
+The Table class is the driver and mirrors the integration testing, so there are no actual
+feasible unit tests for this class. This classes is responsible for taking input from the player,
+giving the dealer or player cards, determining if game is over, and showing the winner.
+
+Deck:
+The Deck class holds all the cards in the deck. It is also holds all possible suits and points.
+It contains methods to create a deck, shuffle a deck, and remove the top card from the deck.
+
+Card:
+The Card is responsible for holding the value and suit of a particular card.
+
+Player:
+The Player class is responsible for holding the name of the player as well as the hand the
+player has. The Player class can add cards to the player's hand and get the total points for
+their hand. Dealer and BlackJackPlayer both extend this class.
+
+BlackJackPlayer:
+The is the class that the actual player of the game will be using. This class holds the info
+to whether the player CAN play the game (score < 21) or if they WANT to play the game (stands).
+
+Dealer:
+The Dealer class is responsible mainly for keeping track if the dealer can keep playing.
+Once the dealer's points is at or equal to 16, the dealer stops playing.
