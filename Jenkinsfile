@@ -5,7 +5,7 @@ pipeline {
       steps{
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
-          sh 'docker build -t jackdiamond/blackjack'
+          sh 'pip install --user -r requirements.txt'
         }
       }
     }
