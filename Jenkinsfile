@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
-        sh 'pip install -r requirements.txt --no-cache-dir'
+        sh 'pip install -r requirements.txt --no-cache-dir --user'
       }
     }
     stage('Unit Testing') {
