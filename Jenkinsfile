@@ -1,12 +1,13 @@
 pipeline {
   agent { docker { image 'python:3.7.2' } }
   stages {
-    stage('build') {
+    stage('Build') {
       steps {
+        sh 'pip install pytest'
         sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
       }
     }
-    stage('test') {
+    stage('Test') {
       steps {
         sh 'python test_card.py'
         sh 'python test_player.py'
