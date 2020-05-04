@@ -3,10 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'python -m venv env'
-        sh 'source ./env/bin/activate'
         sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
-        sh 'pip install -r requirements.txt --no-cache-dir --user'
+        sh 'pip install -r --user requirements.txt --no-cache-dir'
       }
     }
     stage('Unit Testing') {
