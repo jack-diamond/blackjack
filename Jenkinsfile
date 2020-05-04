@@ -23,12 +23,12 @@ pipeline {
         sh 'python test_integration.py'
       }
     }
-    stage('Proceed to Deployment') {
+    /*stage('Proceed to Deployment') {
       steps {
         timeout(time: 30, unit: "SECONDS"){
           input('Do you want to proceed?')
         }
       }
-    }
+    }*/
   }
 }
