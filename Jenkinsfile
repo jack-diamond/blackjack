@@ -25,7 +25,8 @@ pipeline {
     }
     stage('Proceed to Deployment') {
       steps {
-        input('Do you want to proceed?')
+        timeout(time: 30, unit: "SECONDS")
+          input('Do you want to proceed?')
       }
     }
   }
