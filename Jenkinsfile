@@ -8,7 +8,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python test_card.py'
+        sh 'python test_card.py test_player.py'
       }  
     }
   }
