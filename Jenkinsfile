@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'python -m py_compile table.py'
+        sh 'python -m py_compile table.py card.py blackjackplayer.py dealer.py deck.py player.py'
       }
     }
     stage('test') {
