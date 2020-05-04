@@ -23,5 +23,10 @@ pipeline {
         sh 'python test_integration.py'
       }
     }
+    stage('Proceed to Deployment') {
+      steps {
+        input('Do you want to proceed?')
+      }
+    }
   }
 }
