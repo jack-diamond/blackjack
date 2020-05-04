@@ -1,16 +1,15 @@
 pipeline {
-    agent none 
-    stages {
-        stage('Build') { 
-            agent {
-                docker {
-                    image 'python:2-alpine' 
-                }
-            }
-            steps {
-                sh 'python -m py_compile table.py' 
-                stash(name: 'compiled-results', includes: 'sources/*.py*') 
-            }
-        }
+  agent { docker { image 'python:3.7.2' } }
+  stages {
+    stage('build') {
+      steps {
+        sh 'blackjackplayer.py card.py dealer.py deck.py player.py table.py'
+      }
     }
+    stage('test') {
+      steps {
+        sh 'python test_table.py'
+      }  
+    }
+  }
 }
