@@ -15,9 +15,10 @@ pipeline {
         sh 'python test_deck.py'
       }  
     }
-    stage('Integration Testing')
+    stage('Integration Testing'){
       steps {
         sh 'python test_integration.py'
       }
+    }
   }
 }
