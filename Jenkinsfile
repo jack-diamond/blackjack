@@ -23,5 +23,10 @@ pipeline {
         sh 'python test_integration.py'
       }
     }
+    stage('Code Coverage'){
+      steps{
+        sh 'coverage run test_suite.py'
+      }
+    }
   }
 }
