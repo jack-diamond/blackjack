@@ -16,5 +16,8 @@ pipeline {
         sh 'python test_integration.py'
       }  
     }
+    stage ("Extract test results") {
+        cobertura coberturaReportFile: 'path-to/coverage.xml'
+    }
   }
 }
