@@ -82,7 +82,7 @@ class Table:
 
 
 if __name__ == '__main__':
-    print("Version 1.2")
+    print("Version 1.3")
     name = input("Please enter your name... ")
     game = Table(name)
     print('Welcome to BlackJack. Your dealer will be Oberyn.')
